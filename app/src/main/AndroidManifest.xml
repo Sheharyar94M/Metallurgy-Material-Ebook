@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qsa.metallurgy_material_engineering_premium">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--  ye app kuch mobiles py youtube player issue kr rha tha like above then Android 11, is liye ye code add kiya yaha
+      helpful link       https://stackoverflow.com/questions/29133874/android-youtube-api-an-error-occurred-while-initializing-youtube-player
+    -->
+    <queries>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.qsa.metallurgy_material_engineering_premium.VideoPlayerActivity" />
+        <activity
+            android:name="com.qsa.metallurgy_material_engineering_premium.Splash"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name="com.qsa.metallurgy_material_engineering_premium.CategoryResult" />
+        <activity android:name="com.qsa.metallurgy_material_engineering_premium.BookView" />
+        <activity android:name="com.qsa.metallurgy_material_engineering_premium.PdfDetail" >
+
+        </activity>
+        <activity
+            android:name="com.qsa.metallurgy_material_engineering_premium.MainActivity"
+            android:exported="true">
+
+
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+    </application>
+
+</manifest>
